@@ -2,6 +2,12 @@
 
 <html lang="en">
 <head>
+   <meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<title>Welcome to Skill Adda</title>
    <!-- meta http-equiv="refresh" content="0; url=http://skilladda.com" /-->
    <style>
 #loading {
@@ -40,29 +46,32 @@
 </style>
 </head>
 <body>
-    <br> <br> <br>
-	<center><h1><a href="http://www.skilladda.com">Skill Adda</a></h1></center>
-	<center><h1><a href="http://www.skilladda.com">Skill Adda</a></h1></center>
-	<div id="html">
-	
+		
+	<div id="html" >
+		
 	</div>
 	<script src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript">
-		var w = window,
-			d = document,
-			e = d.documentElement,
-			g = d.getElementsByTagName('body')[0],
-			width = w.innerWidth || e.clientWidth || g.clientWidth,
-			height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-			var networkConnectivity = navigator.onLine ? "online" : "offline";
-		if(networkConnectivity=='online'){
-			window.location.href = "http://www.skilladda.com";
-		}
-		else{
-			if(width<992){
-				document.getElementById('html').innerHTML = '<div id="loading"><img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" /><div class="error_msg">Please connect to your internet connection and try again!</div></div>';
+	//	app.initialize();
+	//	$(document).ready(function(){	
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth,
+				height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+				var networkConnectivity = navigator.onLine ? "online" : "offline";
+				alert(networkConnectivity);
+			if(networkConnectivity=='online'){
+				window.location.href = "http://www.skilladda.com";
 			}
-		}
+			else{
+			//	if(width<992){
+					document.getElementById('html').innerHTML = '<div id="loading"><img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" /><div class="error_msg">Please connect to your internet connection and try again!</div></div>';
+			//	}
+			}	
+	//	});
 	</script>
 </body>
 </html>
