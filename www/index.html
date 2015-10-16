@@ -1,42 +1,98 @@
-<html>
-  <head>
-    <title>navigator.network.connection.type Example</title>
+<!doctype html>
 
-    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-	app.initialize();
-    // Wait for PhoneGap to load
-    // 
-  //  document.addEventListener("deviceready", onDeviceReady, true);
-$(document).ready(function(){
-	onDeviceReady();
-});
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    //
-    function onDeviceReady() {
-		checkConnection();
-    }
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<title>Welcome to Skill Adda</title>
+   <!-- meta http-equiv="refresh" content="0; url=http://skilladda.com" /-->
+   <style>
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0px;
+   left: 0px;
+   position: fixed;
+   display: block;
+   opacity: 0.7;
+   background-color: #C7C7C7;
+   z-index: 99;
+   text-align: center;
+   padding-top:30%;
+}
 
-    function checkConnection() {
-        alert('hi');
-		var networkState = navigator.network.connection.type;
-		alert('hello');
-        var states = {};
-        states[Connection.UNKNOWN]  = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI]     = 'WiFi connection';
-        states[Connection.CELL_2G]  = 'Cell 2G connection';
-        states[Connection.CELL_3G]  = 'Cell 3G connection';
-        states[Connection.CELL_4G]  = 'Cell 4G connection';
-        states[Connection.NONE]     = 'No network connection';
+#loading-image {
+  top: 100px;
+  left: 240px;
+  z-index: 100;
+  width:70%;
+  height:auto;
+  margin-left:15%;
+  margin-right:15%;
+}
+.error_msg{
+	text-align:center;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:10%;
+	font-size:28px;
+}	
+@media(min-width:320px) and (max-width:480px){
+	.error_msg{font-size:23px;}
+}
+</style>
+</head>
+<body>
+		
+	<h1>Welcome to SkillAdda</h1>
+	<div id="deviceready" class="blink">
+		<p class="event listening">Connecting to Device</p>
+		<p class="event received">Device is Ready</p>
+		<h4 id="deviceProperties"></h4>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		app.initialize();
+	//	$(document).ready(function(){	
+			
+		document.addEventListener("deviceready", onDeviceReady, false);
 
-        alert('Connection type: ' + states[networkState]);
-    }
-
-    </script>
-  </head>
-  <body>
-    <p>A dialog box will report the network state.</p>
-  </body>
+		// device APIs are available
+		//
+		function onDeviceReady() {
+			var element = document.getElementById('deviceProperties');
+			element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+								'Device Cordova: '  + device.cordova  + '<br />' +
+								'Device Platform: ' + device.platform + '<br />' +
+								'Device Version: '  + device.version  + '<br />';
+			checkConnection();
+		}	
+		function checkConnection() {
+				alert('hi');
+		}
+			
+			/*
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth,
+				height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+				var networkConnectivity = navigator.onLine ? "online" : "offline";
+			if(networkConnectivity=='online'){
+				window.location.href = "http://www.skilladda.com";
+			}
+			else{
+				if(width<992){
+					document.getElementById('html').innerHTML = '<div id="loading"><img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" /><div class="error_msg">Please connect to your internet connection and try again!</div></div>';
+				}
+			}		*/
+	//	});
+	</script>
+</body>
 </html>
