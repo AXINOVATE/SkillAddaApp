@@ -19,7 +19,7 @@
 		<h4 id="deviceProperties2"></h4>
 	</div>		
 	
-	<script type="text/javascript" src="cordova-2.5.0.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
 	//	app.initialize();
@@ -48,12 +48,12 @@
 			else{
 				alert(networkConnectionType);
 			//	$('head').append('meta http-equiv="refresh" content="5; url=http://skilladda.com" />');
-				var meta = document.createElement('meta');
-				meta.httpEquiv = "refresh";
-				meta.content = "5; url=http://skilladda.com";
-				document.getElementsByTagName('head')[0].appendChild(meta);
+			//	var meta = document.createElement('meta');
+			//	meta.httpEquiv = "refresh";
+			//	meta.content = "0; url=http://skilladda.com";
+			//	document.getElementsByTagName('head')[0].appendChild(meta);
 			//	window.location="http://skilladda.com";
-				document.location = "http://skilladda.com";
+				window.location.href= "skilladda.com";
 				alert('finished');
 			}
 		}
