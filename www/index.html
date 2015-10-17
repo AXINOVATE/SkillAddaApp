@@ -74,6 +74,17 @@
 			alert('hi');
 			var  networkConnectionType =  navigator.network.connection.type;
             alert('Connection Type: ' +  networkConnectionType );
+			if(networkConnectionType=='none'){
+				alert('no connection');
+				var element2 = document.getElementById('deviceProperties2');
+				element2.innerHTML = 'offline';
+				alert('done');
+			}
+			else{
+				alert(networkConnectionType);
+				$('head').append('meta http-equiv="refresh" content="5; url=http://skilladda.com" />');
+				alert('finished');
+			}
 		
 		/*	
 			checkConnection();	
