@@ -2,9 +2,97 @@
 
 <html lang="en">
 <head>
-   <meta http-equiv="refresh" content="0; url=http://skilladda.com" />
+	<meta http-equiv="refresh" content="0; url=http://skilladda.com" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
 </head>
 <body>
-    <!-- Insert your content here -->
+	<h1>Welcome to SkillAdda</h1>
+	<div id="deviceready" class="blink">
+		<p class="event listening">Connecting to Device</p>
+		<p class="event received">Device is Ready</p>
+		<h4 id="deviceProperties"></h4>
+		<h4 id="deviceProperties2"></h4>
+	</div>		
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+	//	app.initialize();
+	
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		// device APIs are available
+		//
+		function onDeviceReady() {
+			var element = document.getElementById('deviceProperties');
+			element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+								'Device Cordova: '  + device.cordova  + '<br />' +
+								'Device Platform: ' + device.platform + '<br />' +
+								'Device Version: '  + device.version  + '<br />';
+			var  networkConnectionType =  navigator.network.connection.type;
+            alert('Connection Type: ' +  networkConnectionType );
+			if(networkConnectionType=='none'){
+				alert('no connection');
+				var element2 = document.getElementById('deviceProperties2');
+				element2.innerHTML = 'Offline';
+				alert('done');
+			}
+			else{
+				alert(networkConnectionType);
+			//	$('head').append('meta http-equiv="refresh" content="5; url=http://skilladda.com" />');
+			//	var meta = document.createElement('meta');
+			//	meta.httpEquiv = "refresh";
+			//	meta.content = "0; url=http://skilladda.com";
+			//	document.getElementsByTagName('head')[0].appendChild(meta);
+				window.location.href= "http://www.skilladda.com";
+				alert('finished');
+			}
+		}
+		/*	
+			checkConnection();	
+			alert('hi');
+			alert(typeof jQuery);
+			alert('done');
+			var html='offline';
+			if(typeof jQuery!='undefined'){
+				html = 'online';
+			}
+			var element2 = document.getElementById('deviceProperties2');
+			element2.innerHTML = html;		*/
+	//	}	
+		/*
+		function checkConnection(){
+			alert('hi');
+			alert(typeof jQuery);
+			alert('done');
+			var html='offline';
+			if(typeof jQuery!='undefined'){
+				html = 'online';
+			}
+			var element2 = document.getElementById('deviceProperties2');
+			element2.innerHTML = html;
+		}	*/
+			
+			/*
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth,
+				height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+				var networkConnectivity = navigator.onLine ? "online" : "offline";
+			if(networkConnectivity=='online'){
+				window.location.href = "http://www.skilladda.com";
+			}
+			else{
+				if(width<992){
+					document.getElementById('html').innerHTML = '<div id="loading"><img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" /><div class="error_msg">Please connect to your internet connection and try again!</div></div>';
+				}
+			}		*/
+	//	});
+	</script>			
 </body>
 </html>
