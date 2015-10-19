@@ -38,6 +38,7 @@
 		//	alert('Connection Type: ' +  networkConnectionType );
 			if(networkConnectionType=='none'){
 				var element = document.getElementById('message');
+				element.setAttribute('href','#');
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
