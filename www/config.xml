@@ -97,7 +97,9 @@
    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
     </gap:config-file>
+  <feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1"/>
   <access origin="*"/>
+  <!--
   <feature name="InAppBrowser">
     <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
   </feature>
@@ -107,5 +109,5 @@
   <feature name="InAppBrowser">
     <param name="ios-package" value="CDVInAppBrowser" />
   </feature>
-  <feature name="InAppBrowser" />
+  <feature name="InAppBrowser" />		-->
 </widget>
