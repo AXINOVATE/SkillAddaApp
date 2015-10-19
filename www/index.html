@@ -23,7 +23,7 @@
 		
 		function onDeviceReady() {
 			var  networkConnectionType =  navigator.network.connection.type;
-            alert('Connection Type: ' +  networkConnectionType );
+         //   alert('Connection Type: ' +  networkConnectionType );
 			var element = document.getElementById('message');
 			element.innerHTML = '';
 			if(networkConnectionType=='none'){
@@ -35,7 +35,7 @@
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
-			alert('Connection Type: ' +  networkConnectionType );
+		//	alert('Connection Type: ' +  networkConnectionType );
 			if(networkConnectionType=='none'){
 				var element = document.getElementById('message');
 				element.innerHTML = 'Please connect to your internet connection and try again!';
