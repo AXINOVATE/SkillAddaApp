@@ -1,0 +1,59 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'phonegap@latest' ]
+2 info using npm@1.1.46
+3 info using node@v0.8.5
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose config file C:\Users\Axinovate02\.npmrc
+6 verbose config file C:\Program Files\nodejs\etc\npmrc
+7 verbose config file C:\Program Files\nodejs\node_modules\npm\npmrc
+8 verbose read json C:\Users\Axinovate02\AppData\Roaming\npm\package.json
+9 verbose read json C:\Users\Axinovate02\AppData\Roaming\npm\package.json
+10 verbose cache add [ 'phonegap@latest', null ]
+11 silly cache add name=undefined spec="phonegap@latest" args=["phonegap@latest",null]
+12 verbose parsed url { pathname: 'phonegap@latest',
+12 verbose parsed url   path: 'phonegap@latest',
+12 verbose parsed url   href: 'phonegap@latest' }
+13 silly cache add name="phonegap" spec="latest" args=["phonegap","latest"]
+14 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+15 verbose addNamed [ 'phonegap', 'latest' ]
+16 verbose addNamed [ null, null ]
+17 silly lockFile 24130cfd-phonegap-latest phonegap@latest
+18 verbose lock phonegap@latest C:\Users\Axinovate02\AppData\Roaming\npm-cache\24130cfd-phonegap-latest.lock
+19 info addNameTag [ 'phonegap', 'latest' ]
+20 verbose url raw phonegap
+21 verbose url resolving [ 'https://registry.npmjs.org/', './phonegap' ]
+22 verbose url resolved https://registry.npmjs.org/phonegap
+23 info retry registry request attempt 1 at 15:08:23
+24 http GET https://registry.npmjs.org/phonegap
+25 info retry will retry, error on last attempt: Error: SSL Error: CERT_UNTRUSTED
+26 info retry registry request attempt 2 at 15:08:36
+27 http GET https://registry.npmjs.org/phonegap
+28 info retry will retry, error on last attempt: Error: SSL Error: CERT_UNTRUSTED
+29 info retry registry request attempt 3 at 15:09:37
+30 http GET https://registry.npmjs.org/phonegap
+31 silly lockFile 24130cfd-phonegap-latest phonegap@latest
+32 error Error: SSL Error: CERT_UNTRUSTED
+32 error     at ClientRequest.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\main.js:440:26)
+32 error     at ClientRequest.g (events.js:185:14)
+32 error     at ClientRequest.EventEmitter.emit (events.js:88:17)
+32 error     at HTTPParser.parserOnIncomingClient [as onIncoming] (http.js:1455:7)
+32 error     at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:111:23)
+32 error     at CleartextStream.socketOnData [as ondata] (http.js:1366:20)
+32 error     at CleartextStream.CryptoStream._push (tls.js:485:27)
+32 error     at SecurePair.cycle (tls.js:839:20)
+32 error     at EncryptedStream.CryptoStream.write (tls.js:220:13)
+32 error     at Socket.ondata (stream.js:38:26)
+33 error If you need help, you may report this log at:
+33 error     <http://github.com/isaacs/npm/issues>
+33 error or email it to:
+33 error     <npm-@googlegroups.com>
+34 error System Windows_NT 6.2.9200
+35 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "phonegap@latest"
+36 error cwd C:\wamp\www\SkillAddaApp
+37 error node -v v0.8.5
+38 error npm -v 1.1.46
+39 verbose exit [ 1, true ]

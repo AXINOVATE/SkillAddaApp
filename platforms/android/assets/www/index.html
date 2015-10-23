@@ -15,11 +15,12 @@
 		</div>	
 	</div>	
 	
-	<script type="text/javascript" src="PushNotification.js"></script>
+	
 	<script type="text/javascript">
 		document.addEventListener("deviceready", onDeviceReady, false);
 
 		// device APIs are available
+		
 		function onDeviceReady() {
 			var  networkConnectionType =  navigator.network.connection.type;
          //   alert('Connection Type: ' +  networkConnectionType );
@@ -31,29 +32,6 @@
 			else{
 				element.innerHTML = '<a href="#" onClick=goToUrl();>Go to SkillAdda</a>';
 			}
-			//push notification
-			var push = PushNotification.init({ "android": {"senderID": "50957485970"},
-				 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-			push.on('registration', function(data) {
-				alert('registeration');
-				alert(data.registrationId);
-				// data.registrationId
-			});
-			push.on('notification', function(data) {
-				alert('notification');
-				alert(data.message);
-				// data.message,
-				// data.title,
-				// data.count,
-				// data.sound,
-				// data.image,
-				// data.additionalData
-			});
-
-			push.on('error', function(e) {
-				alert('error');
-				// e.message
-			});
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
