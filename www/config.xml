@@ -27,7 +27,7 @@
   <gap:plugin name="org.apache.cordova.contacts"/>
   <gap:plugin name="org.apache.cordova.device"/>
   <gap:plugin name="org.apache.cordova.network-information"/>
-  <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
+  <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" /> 
   <gap:plugin name="phonegap-plugin-push" source="npm" />
   <!-- gap:plugin name="org.apache.cordova.contacts"/>
   <gap:plugin name="org.apache.cordova.device"/>
