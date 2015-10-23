@@ -40,12 +40,7 @@
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
-				window.open = cordova.InAppBrowser.open;                
-				var ref = window.open('http://www.skilladda.com', '_blank', 'location=no', 'hidden=yes','clearsessioncache=yes', 'toolbar=no', 'clearcache=yes','fullscreen=yes');
-				ref.addEventListener('exit', function () {
-					navigator.app.exitApp();
-				});
-			//	window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 			}
 		}
 	</script>			
