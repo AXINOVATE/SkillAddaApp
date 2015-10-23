@@ -31,7 +31,7 @@
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
-				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to SkillAdda</a>';
+				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 			}
 			if ( typeof PushNotification == 'function' ) { 
 				log.innerHTML = 'init present<br>';
@@ -69,9 +69,11 @@
 				var element = document.getElementById('message');
 			//	element.setAttribute('href','#');
 				element.innerHTML = 'Please connect to your internet connection and try again!';
+				return false;
 			}
 			else{
-				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				return false;
 			}
 		}
 	</script>			
