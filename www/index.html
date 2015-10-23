@@ -32,6 +32,7 @@
 			else{
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to SkillAdda</a>';
 			}
+			element.innerHTML = element.innerHTML()+'<br>ready';
 			alert('going for testing');
 			//push notification
 			var push = PushNotification.init({ "android": {"senderID": "50957485970"},
