@@ -163,6 +163,7 @@ module.exports = {
      */
 
     init: function(options) {
+		alert('entered');
         return new PushNotification(options);
     },
 
