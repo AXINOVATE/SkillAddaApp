@@ -13,15 +13,13 @@
 			<img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" />
 			<div class="error_msg" id="message"></div>
 		</div>	
-	</div>	
-	
-	<script type="text/javascript" src="js/push.js"></script>
+	</div>
 	<script type="text/javascript">
 		document.addEventListener("deviceready", onDeviceReady, false);
 
 		// device APIs are available
+		
 		function onDeviceReady() {
-			alert('ready');
 			var  networkConnectionType =  navigator.network.connection.type;
          //   alert('Connection Type: ' +  networkConnectionType );
 			var element = document.getElementById('message');
@@ -30,33 +28,8 @@
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
-				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to asdSkillAdda</a>';
+				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 			}
-			alert('going for testing');
-			//push notification
-			var push = PushNotification.init({ "android": {"senderID": "50957485970"},
-				 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-			push.on('registration', function(data) {
-				alert('registeration');
-				alert(data.registrationId);
-				// data.registrationId
-			});
-			push.on('notification', function(data) {
-				alert('notification');
-				alert(data.message);
-				// data.message,
-				// data.title,
-				// data.count,
-				// data.sound,
-				// data.image,
-				// data.additionalData
-			});
-
-			push.on('error', function(e) {
-				alert('error');
-				alert(e.message);
-				// e.message
-			});
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
