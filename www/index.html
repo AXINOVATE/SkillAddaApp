@@ -31,9 +31,9 @@
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
-				alert('test');
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to SkillAdda</a>';
 			}
+			alert(typeof PushNotification);
 			if ( typeof PushNotification.init == 'function' ) { 
 				log.innerHTML = 'init present<br>';
 			}
