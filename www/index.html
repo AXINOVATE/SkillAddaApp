@@ -67,11 +67,11 @@
 		//	alert('Connection Type: ' +  networkConnectionType );
 			if(networkConnectionType=='none'){
 				var element = document.getElementById('message');
-				element.setAttribute('href','#');
+			//	element.setAttribute('href','#');
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 			}
 			else{
-				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes');
+				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 			}
 		}
 	</script>			
