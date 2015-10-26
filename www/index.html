@@ -20,19 +20,14 @@
 
 		// device APIs are available
 		function initialize() { 
-        this.bindEvents(); 
-		}, 
+			this.bindEvents(); 
+		}
 
 		function bindEvents() { 
 			document.addEventListener('deviceready', this.onDeviceReady, false); 
-		},
+		}
 		function onDeviceReady() {
-			//alert(PushNotification.getDeviceUniqueIdentifier());
-			/*var phoneModel = device.uuid;
-			var phoneVersion = device.version;
-			alert(phoneModel+'||'+phoneVersion);*/
 			var  networkConnectionType =  navigator.network.connection.type;
-         //   alert('Connection Type: ' +  networkConnectionType );
 			var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
@@ -43,7 +38,7 @@
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 			}
 			alert('before initialize');
-			initialize();
+			gcm_initialize();
 		}
 		var pushNotification;
 
@@ -73,7 +68,7 @@
 			}
 		};
 
-		function initialize() {
+		function gcm_initialize() {
 			document.addEventListener("deviceready", function(){
 				console.log("device ready");
 
