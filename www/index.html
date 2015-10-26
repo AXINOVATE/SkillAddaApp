@@ -27,10 +27,11 @@
 			document.addEventListener('deviceready', this.onDeviceReady, false); 
 		},
 		function onDeviceReady() {
-		alert(PushNotification.getDeviceUniqueIdentifier());
+			//alert(PushNotification.getDeviceUniqueIdentifier());
 			/*var phoneModel = device.uuid;
 			var phoneVersion = device.version;
 			alert(phoneModel+'||'+phoneVersion);*/
+			receivedEvent('deviceready');
 			var  networkConnectionType =  navigator.network.connection.type;
          //   alert('Connection Type: ' +  networkConnectionType );
 			var element = document.getElementById('message');
@@ -43,7 +44,7 @@
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 			}
 		}
-		/*function receivedEvent(id) { 
+		function receivedEvent(id) { 
 			var parentElement = document.getElementById(id); 
 			var listeningElement = parentElement.querySelector('.listening'); 
 			var receivedElement = parentElement.querySelector('.received'); 
@@ -101,7 +102,7 @@
 				var snd = new Media(event.sound); 
 				snd.play(); 
 			} 
-		} */
+		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
 		//	alert('Connection Type: ' +  networkConnectionType );
