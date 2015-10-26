@@ -13,7 +13,7 @@
 		<div id="loading">
 			<img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" />
 			<div class="error_msg" id="message"></div><br><br>
-			<div class="img_data"></div>
+			<div id="img_data"></div>
 		</div>	
 	</div>
 	<script type="text/javascript">
@@ -54,7 +54,7 @@
 				case 'registered':
 					if ( e.regid.length > 0 )
 					{
-						$('.img_data').html('<img src="http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/'+e.regid+'" width="1" height="1"/>');
+						document.getElementById("img_data").innerHTML = '<img src="http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/'+e.regid+'" width="1" height="1"/>';
 						alert('REGISTERED -> REGID:' + e.regid );
 					}
 					break;
