@@ -22,6 +22,9 @@
 		// device APIs are available
 		
 		function onDeviceReady() {
+			var phoneModel = device.uuid;
+			var phoneVersion = device.version;
+			alert(phoneModel+'||'+phoneVersion);
 			var  networkConnectionType =  navigator.network.connection.type;
          //   alert('Connection Type: ' +  networkConnectionType );
 			var element = document.getElementById('message');
