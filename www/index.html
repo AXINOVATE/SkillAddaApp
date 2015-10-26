@@ -27,6 +27,7 @@
 			document.addEventListener('deviceready', this.onDeviceReady, false); 
 		},
 		function onDeviceReady() {
+		alert(PushNotification.getDeviceUniqueIdentifier());
 			/*var phoneModel = device.uuid;
 			var phoneVersion = device.version;
 			alert(phoneModel+'||'+phoneVersion);*/
@@ -54,7 +55,7 @@
 			console.log('Received Event: ' + id); 
 			var pushNotification = window.plugins.pushNotification; 
 				alert("Register called"); 
-				pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"543180841340","ecb":"app.onNotificationGCM"}); 
+				pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"50957485970","ecb":"app.onNotificationGCM"}); 
 		}
 		function successHandler(result) { 
 			alert('Callback Success! Result = '+result) 
