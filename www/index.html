@@ -55,7 +55,8 @@
 					if ( e.regid.length > 0 )
 					{
 						alert('REGISTERED -> REGID:' + e.regid );
-						window.open(url, 'http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/'+e.regid);
+						var element = document.getElementById('img_data');
+						element.innerHTML = "<a href='http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/"+e.regid+"'/>go</a>";
 					}
 					break;
 				case 'message':
