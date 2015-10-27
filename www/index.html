@@ -56,7 +56,6 @@
 					{
 						console.log('REGISTERED -> REGID:' + e.regid );
 						document.getElementById('app_id').innerHTML = e.regid;
-						alert(e.regid);
 						document.getElementById('app_device').innerHTML = device.platform;
 					}
 					break;
@@ -100,7 +99,6 @@
 			else{
 				var app_id = document.getElementById('app_id').innerHTML;
 				var app_device = device.platform;
-				alert('http://www.skilladda.xucorelms.com?app_id='+app_id+'&app_device='+app_device);
 				window.open('http://www.skilladda.xucorelms.com?app_id='+app_id+'&app_device='+app_device,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
