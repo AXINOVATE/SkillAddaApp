@@ -39,7 +39,6 @@
 			else{
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to SkillAdda</a>';
 			}
-			alert('before initialize');
 			gcm_initialize();
 		}
 		var pushNotification;
@@ -49,7 +48,7 @@
 		function errorHandler (error) {
 		}
 
-		window.onNotificationGCM = function(e) {
+		function onNotificationGCM(e) {
 			switch( e.event )
 			{
 				case 'registered':
@@ -70,16 +69,15 @@
 				default:
 					break;
 			}
-		};
+		}
 
 		function gcm_initialize() {
 			document.addEventListener("deviceready", function(){
-				alert(window.plugins.pushNotification);
 				pushNotification = window.plugins.pushNotification;
 				if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
 					try {
 						pushNotification.register(
-							successHandler, errorHandler, { "senderID":"50957485970", "ecb":"window.onNotificationGCM" });
+							successHandler, errorHandler, { "senderID":"50957485970", "ecb":"onNotificationGCM" });
 					} catch(err)
 					{
 						txt="There was an error on this page.\n\n";
