@@ -56,7 +56,7 @@
 					{
 						alert('REGISTERED -> REGID:' + e.regid );
 						var element = document.getElementById('img_data');
-						element.innerHTML = "<a href='http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/"+e.regid+"'/>go</a>";
+						element.innerHTML = '<a target="_blank" onClick=goToUrl2("http://www.skilladda.xucorelms.com/ui_home/reg_gcm_id/'+e.regid+'");>Go to reg</a>';
 					}
 					break;
 				case 'message':
@@ -101,6 +101,20 @@
 			}
 			else{
 				window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				return false;
+			}
+		}
+		function goToUrl2(url){
+			var  networkConnectionType =  navigator.network.connection.type;
+		//	alert('Connection Type: ' +  networkConnectionType );
+			if(networkConnectionType=='none'){
+				var element = document.getElementById('message');
+			//	element.setAttribute('href','#');
+				element.innerHTML = 'Please connect to your internet connection and try again!';
+				return false;
+			}
+			else{
+				window.open(url,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
