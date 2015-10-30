@@ -36,7 +36,7 @@
 			}
 			else{
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-				setTimeout(function(){window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');},4000);
+				setTimeout(function(){window.open('http://www.skilladda.xucorelms.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');},4000);
 			}		
 			if ( typeof PushNotification == 'function' ) { 
 				log.innerHTML = 'init present<br>';
@@ -76,23 +76,12 @@
 				return false;
 			}
 			else{
-				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				window.open('http://www.skilladda.xucorelms.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
 		function exitWindow(){
-		//	navigator.app.exitApp();
-			navigator.notification.confirm(
-                'Do you want to exit ?',  
-                function(i){
-                    if(i==2)
-                     {
-                       navigator.app.exitApp(); //This will Close the App
-                     }
-                },              
-                'SkillAdda',            
-                'Cancel,Exit'          
-              );
+			navigator.app.exitApp();
 			/*
 			var ref = window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 			ref.close();		*/
