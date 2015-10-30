@@ -27,8 +27,7 @@
 		
 		function onDeviceReady() {
 			var  networkConnectionType =  navigator.network.connection.type;
-         //   alert('Connection Type: ' +  networkConnectionType );
-			var element = document.getElementById('message');
+         	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
 			if(networkConnectionType=='none'){
@@ -37,7 +36,7 @@
 			}
 			else{
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-				setTimeout(function(){window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');},1000);
+				setTimeout(function(){window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');},4000);
 			}		
 			if ( typeof PushNotification == 'function' ) { 
 				log.innerHTML = 'init present<br>';
@@ -70,10 +69,8 @@
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
-		//	alert('Connection Type: ' +  networkConnectionType );
 			if(networkConnectionType=='none'){
 				var element = document.getElementById('message');
-			//	element.setAttribute('href','#');
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 				alert(element.innerHTML);
 				return false;
@@ -83,13 +80,17 @@
 				return false;
 			}
 		}
+		function exitWindow(){
+			var ref = window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+			ref.close();
+		}
 	</script>			
 </body>
 <footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
 	<a target="_blank" class="footer-btn-group" style="border-right:2px solid black;" onClick=goToUrl(); >
 		<span>Home</span>
 	</a>
-	<a target="_blank" class="footer-btn-group">
+	<a target="_blank" class="footer-btn-group" onClick=exitWindow(); >
 		<span>Exit</span>
 	</a>
 </footer>
