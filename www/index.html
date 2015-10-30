@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
 <!--	<meta http-equiv="refresh" content="0; url=http://skilladda.com" />	-->
@@ -8,7 +7,7 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/push.js"></script>
 </head>
-<body>
+<body id="textBody">
 	<div id="html">
 		<div id="loading">
 			<img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />
@@ -38,9 +37,9 @@
 				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 				setTimeout(
 					function(){
-						window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-						$('body').html('<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>');
-						$('#loading').show();
+						window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						var body = document.getElementById('textBody');
+						body.innerHTML = '<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>';
 					},3000);
 				
 			}		
@@ -82,7 +81,7 @@
 				return false;
 			}
 			else{
-				window.open('http://www.skilladda.com','_blank','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
@@ -90,15 +89,14 @@
 			navigator.app.exitApp();
 		}
 		
-		var screen_width = $(window).width();
+		var screen_width = screen.width;
 		var base_url = window.location.origin;
-		$('a').click(function(e){
-			
+		function loader(){
 			if(screen_width<992){
-				$('body').html('<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>');
-				$('#loading').show();
+				var body = document.getElementById('textBody');
+				body.innerHTML = '<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>';
 			}
-		});
+		};
 	</script>			
 </body>
 <footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
