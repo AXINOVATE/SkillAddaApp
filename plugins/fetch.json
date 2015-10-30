@@ -7,12 +7,28 @@
         "is_top_level": true,
         "variables": {}
     },
-    "phonegap-plugin-push": {
+    "com.orcasinc.pushplugin": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-push"
+            "id": "pushplugin"
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "org.apache.cordova.globalization": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.globalization"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
