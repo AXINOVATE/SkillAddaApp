@@ -93,9 +93,8 @@
 		var screen_width = $(window).width();
 		var base_url = window.location.origin;
 		$('a').click(function(e){
-			var link = $(this).attr('href');
-			var l2 = link.substring(0,1);
-			if(screen_width<992 && (l2=='/' || l2=='h')){
+			
+			if(screen_width<992){
 				$('body').html('<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>');
 				$('#loading').show();
 			}
