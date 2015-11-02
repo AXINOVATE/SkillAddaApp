@@ -38,8 +38,8 @@
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 				setTimeout(
 					function(){
-						var body = document.getElementById('textBody');
-						loader();
+					//	var body = document.getElementById('textBody');
+					//	loader();
 					//	body.innerHTML = '<div id="loading"><img id="loading-image" src="loading.gif" alt="Loading..." /></div>';
 						window.open('http://www.skilladda.xucorelms.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
@@ -84,6 +84,9 @@
 				return false;
 			}
 			else{
+				var body = document.getElementById('textBody');
+				
+				body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
 				window.open('http://www.skilladda.xucorelms.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
