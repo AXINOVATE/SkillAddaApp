@@ -30,12 +30,12 @@
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
 			if(networkConnectionType=='none'){
-				document.getElementById('loading1');.style.display = "block";
-				alert(element.innerHTML);
+				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
+				alert(element.innerHTML);
 			}
 			else{
-				element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
+			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 				setTimeout(
 					function(){
 						var body = document.getElementById('textBody');
