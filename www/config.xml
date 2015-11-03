@@ -99,6 +99,7 @@
     <string>100</string>
     </gap:config-file>
   <access origin="*"/>
+  <access origin="whatsapp:*" launch-external="yes" />
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
