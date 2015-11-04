@@ -42,7 +42,7 @@
   <gap:plugin name="org.apache.cordova.media"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/-->
-  <icon src="www/res/icon/icon.png" />
+  <icon src="icon.png" />
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
   <icon src="www/res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
@@ -66,11 +66,11 @@
   <icon src="www/res/icon/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
   
   <!-- iPhone / iPod Touch -->
-  <icon src="res/icon/ios/icon.png" gap:platform="ios" width="57" height="57" />
+  <icon src="www/res/icon/ios/icon.png" gap:platform="ios" width="57" height="57" />
   <icon src="www/res/icon/ios/icon@2x.png" gap:platform="ios" width="114" height="114" />
   
   <!-- iPad -->
-  <icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+  <icon src="www/res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
   <icon src="www/res/icon/ios/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
   
   <!-- iPhone Spotlight and Settings Icon -->
@@ -94,10 +94,10 @@
   <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
   <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
-  <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/-->
+  <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/>
    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
-    </gap:config-file>
+    </gap:config-file-->
   <access origin="*"/>
   <access origin="whatsapp:*" launch-external="yes" />
   <plugin name="cordova-plugin-whitelist" version="1"/>
