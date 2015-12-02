@@ -89,7 +89,8 @@
     </gap:config-file>
   <access origin="*"/>
   <access origin="whatsapp:*" launch-external="yes" />
-  <plugin name="cordova-plugin-whitelist" version="1"/>
+  <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+  <!--<plugin name="cordova-plugin-whitelist" version="1"/>-->
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -103,5 +104,5 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
-  <engine name="windows" spec="~4.1.0" />
+  <engine name="windows" spec="3.8.1" />
 </widget>
