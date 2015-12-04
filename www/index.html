@@ -87,7 +87,12 @@
 			}
 		}
 		function exitWindow(){
-			navigator.app.exitApp();
+			if(navigator.app){
+				navigator.app.exitApp();
+			}else if(navigator.device){
+				navigator.device.exitApp();
+			}
+			//navigator.app.exitApp();
 		}
 		
 		
