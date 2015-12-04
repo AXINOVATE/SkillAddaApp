@@ -31,7 +31,7 @@
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
-				alert(element.innerHTML);
+				navigator.notification.alert(element.innerHTML,'onOk','SkillAdda','OK');
 			}
 			else{
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
@@ -68,6 +68,9 @@
 				log.innerHTML = log.innerHTML+"error:"+e.message;
 				// e.message
 			});
+		}
+		function onOk(){
+			// After alert
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
