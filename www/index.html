@@ -24,12 +24,6 @@
 
 		// device APIs are available
 		function onDeviceReady() {
-		navigator.notification.confirm(
-            'You are the winner!', // message
-             onConfirm,            // callback to invoke with index of button pressed
-            'Game Over',           // title
-            ['Restart','Exit']         // buttonLabels
-        );
 			var  networkConnectionType =  navigator.network.connection.type;
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
