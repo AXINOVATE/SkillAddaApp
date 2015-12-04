@@ -25,6 +25,12 @@
 		// device APIs are available
 		
 		function onDeviceReady() {
+		navigator.notification.alert(
+			'You are the winner!',  // message
+			alertDismissed,         // callback
+			'Game Over',            // title
+			'Done'                  // buttonName
+		);
 			var  networkConnectionType =  navigator.network.connection.type;
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
