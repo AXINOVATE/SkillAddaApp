@@ -87,6 +87,9 @@
    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
     </gap:config-file>
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+		<false/>
+	</gap:config-file>
   <access origin="*"/>
   <access origin="whatsapp:*" launch-external="yes" />
   <plugin name="cordova-plugin-whitelist" version="1"/>
