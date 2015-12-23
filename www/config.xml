@@ -109,5 +109,6 @@
 	  <icon src="res/icon/windows-phone/icon-173-tile.png" gap:role="background"/>-->
 	  <icon src="res/icon/windows-phone/icon-48.png" platform="winphone" />
 		<icon src="res/icon/windows-phone/widetile.png" platform="winphone" role="background" />
+		<splash src="res/icon/windows-phone/smalltile.png" platform="winphone" />
   </platform>
 </widget>
