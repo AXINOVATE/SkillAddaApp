@@ -104,7 +104,7 @@
     <allow-intent href="itms-apps:*"/>
   </platform>
   <platform name="winphone" >
-		 <preference name="fullscreen" value="true"/>
+		<preference name="fullscreen" value="false"/>
 	  <icon src="www/res/icon/webos/icon-64.png" gap:platform="webos"/>
 	  <icon src="www/res/icon/windows-phone/icon-48.png" gap:platform="winphone"/>
 	  <icon src="www/res/icon/windows-phone/icon-173-tile.png" gap:platform="winphone" gap:role="background"/>
