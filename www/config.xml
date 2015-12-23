@@ -104,10 +104,10 @@
     <allow-intent href="itms-apps:*"/>
   </platform>
   <platform name="winphone" >
-	  <icon src="res/icon/webos/icon-64.png" />
+	 <!-- <icon src="res/icon/webos/icon-64.png" />
 	  <icon src="res/icon/windows-phone/icon-48.png" />
-	  <icon src="res/icon/windows-phone/icon-173-tile.png" gap:role="background"/>
-	 <!-- <icon src="icon.png" platform="winphone" />
-		<icon src="tileicon.png" platform="winphone" role="background" />-->
+	  <icon src="res/icon/windows-phone/icon-173-tile.png" gap:role="background"/>-->
+	  <icon src="res/icon/windows-phone/icon-48.png" platform="winphone" />
+		<icon src="res/icon/windows-phone/widetile.png" platform="winphone" role="background" />
   </platform>
 </widget>
