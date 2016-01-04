@@ -34,13 +34,8 @@
 				if(navigator.network.connection.type=='none'){
 					 ref.close();
 					 location.reload();
-					 ch=1;
-					 check_loop_connection();
 				}
 				else{
-					if(ch==1){
-						location.reload();
-					}
 					check_loop_connection();
 				}
 			 }, 5000);
@@ -54,7 +49,6 @@
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
-				check_loop_connection();
 				//alert(element.innerHTML);
 			}
 			else{
