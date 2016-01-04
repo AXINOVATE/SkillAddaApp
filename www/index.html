@@ -21,8 +21,14 @@
 	</div>
 	<script type="text/javascript">
 		var ref;
+		var deviceReady=0;
 		function ready(){
 			document.addEventListener("deviceready", onDeviceReady, false);
+			setTimeout(function(){
+				if(deviceReady == 0){
+					window.location.reload();
+				}
+			},5000);
 		}
 		
 		// loop function to check connection
@@ -36,6 +42,7 @@
 		}
 		// device APIs are available
 		function onDeviceReady() {
+			deviceReady=1;
 			var  networkConnectionType =  navigator.network.connection.type;
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
