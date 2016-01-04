@@ -21,6 +21,7 @@
 	</div>
 	<script type="text/javascript">
 		var ref;
+		var ch=0;
 		function ready(){
 			document.addEventListener("deviceready", onDeviceReady, false);
 			setTimeout(function(){
@@ -33,8 +34,14 @@
 				if(navigator.network.connection.type=='none'){
 					 ref.close();
 					 location.reload();
+					 ch=1;
 				}
-				else{check_loop_connection();}
+				else{
+					if(ch==1){
+						location.reload();
+					}
+					check_loop_connection();
+				}
 			 }, 5000);
 		}
 		// device APIs are available
