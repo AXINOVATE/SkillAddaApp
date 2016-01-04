@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/push.js"></script>
 </head>
-<body id="textBody">
+<body id="textBody" onload="ready();">
 	<div id="html">
 		<div id="loading">
 			<img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />
@@ -20,8 +20,20 @@
 		</div>	
 	</div>
 	<script type="text/javascript">
-		document.addEventListener("deviceready", onDeviceReady, false);
-
+		var ref;
+		function ready(){
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+		
+		// loop function to check connection
+		function check_loop_connection(){
+			setTimeout(function() {
+				if(navigator.network.connection.type=='none'){
+					 ref.close();
+				}
+				else{check_loop_connection();}
+			 }, 5000);
+		}
 		// device APIs are available
 		function onDeviceReady() {
 			var  networkConnectionType =  navigator.network.connection.type;
@@ -35,27 +47,16 @@
 			}
 			else{
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-			var ref;
 				setTimeout(
 					function(){
 						ref=window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						// to check connection is working or not
+						check_loop_connection();
 						
 						// Windows App
 						//window.open('http://www.skilladda.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 						//window.open('http://devskilladda.xucorelms.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
-					setTimeout(function() {
-						/*if(checkConnection()){
-							ref.close();
-						}else{
-							
-						}*/
-						alert(navigator.network.connection.type);
-						if(navigator.network.connection.type=='wifi'){
-							 ref.close();
-							 
-						}
-					 }, 15000);
 			}		
 			if ( typeof PushNotification == 'function' ) { 
 				log.innerHTML = 'init present<br>';
