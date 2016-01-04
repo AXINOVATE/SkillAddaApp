@@ -54,6 +54,7 @@
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
+				check_loop_connection();
 				//alert(element.innerHTML);
 			}
 			else{
