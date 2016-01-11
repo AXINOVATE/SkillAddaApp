@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/push.js"></script>
 </head>
-<body id="textBody">
+<body id="textBody" onload="ready();">
 	<div id="html">
 		<div id="loading">
 			<img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />
@@ -20,8 +20,26 @@
 		</div>	
 	</div>
 	<script type="text/javascript">
-		document.addEventListener("deviceready", onDeviceReady, false);
-
+		var ref;
+		var ch=0;
+		function ready(){
+			document.addEventListener("deviceready", onDeviceReady, false);
+			setTimeout(function(){
+			},5000);
+		}
+		
+		// loop function to check connection
+		function check_loop_connection(){
+			setTimeout(function() {
+				if(navigator.network.connection.type=='none'){
+					 ref.close();
+					 location.reload();
+				}
+				else{
+					check_loop_connection();
+				}
+			 }, 5000);
+		}
 		// device APIs are available
 		function onDeviceReady() {
 			var  networkConnectionType =  navigator.network.connection.type;
@@ -37,8 +55,13 @@
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 				setTimeout(
 					function(){
-						window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-						//window.open('http://testskilladda.xucorelms.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						ref=window.open('http://www.skilladda.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						// to check connection is working or not
+						check_loop_connection();
+						
+						// Windows App
+						//window.open('http://www.skilladda.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						//window.open('http://devskilladda.xucorelms.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
 			}		
 			if ( typeof PushNotification == 'function' ) { 
@@ -70,6 +93,14 @@
 				// e.message
 			});
 		}
+		function checkConnection(){
+			var  networkConnectionType =  navigator.network.connection.type;
+			if(networkConnectionType=='none'){
+				return true;
+			}else{
+				return false;
+			}
+		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
 			if(networkConnectionType=='none'){
@@ -82,8 +113,10 @@
 			else{
 			//	var body = document.getElementById('textBody');
 			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
-				window.open('http://www.skilladda.com','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-				//window.open('http://testskilladda.xucorelms.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				// Windows App
+				//window.open('http://www.skilladda.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				ref = window.open('http://www.skilladda.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				//window.open('http://devskilladda.xucorelms.com?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
@@ -99,8 +132,11 @@
 			else{
 			//	var body = document.getElementById('textBody');
 			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
-				window.open('http://www.skilladda.com/admin_home/login_form','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-				//window.open('http://testskilladda.xucorelms.com/admin_home/login_form?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+			
+				// Windows App
+				//window.open('http://www.skilladda.com/admin_home/login_form?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				ref = window.open('http://www.skilladda.com/admin_home/login_form?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				//window.open('http://devskilladda.xucorelms.com/admin_home/login_form?os=wi','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
